@@ -65,7 +65,6 @@ get_new_folder() {
 
 # Function to ask the user for the links and validate them
 get_links() {
-  echo -e "\n"
   for ((i=0; i<count; i++)); do
     while true; do
       read -p "Enter link $((i + 1)): " link
@@ -87,7 +86,7 @@ download_files() {
   for ((i=0; i<count; i++)); do
     link="${links[$i]}"
     echo "Downloading file $((i + 1)) of $count..."
-    axel -q -n 10 "$link"
+    axel -q -n 5 "$link"
   done
 
   end_time=$(date +%s)
