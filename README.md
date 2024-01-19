@@ -1,4 +1,3 @@
-
 # Axel Download Manager
 
 This project is a command-line tool for downloading files from the internet using the Axel download accelerator. It allows the user to specify the number of downloads, the download directory, and the links to the files to download.
@@ -8,42 +7,49 @@ This project is a command-line tool for downloading files from the internet usin
 To use this tool, follow these steps:
 
 1. Clone the repository to your local machine.
-    `bash
-    git clone https://gitlab.com/hecdelatorre/axel-download-manager.git
-    `
+   
+   ```bash
+   git clone https://gitlab.com/hecdelatorre/axel-download-manager.git
+   ```
 
 2. Install Axel on your system:
-
+   
    - **Debian:**
-     `bash
+     
+     ```bash
      sudo apt-get update
      sudo apt-get install axel
-     `
-
+     ```
+   
    - **Fedora:**
-     `bash
+     
+     ```bash
      sudo dnf install axel
-     `
-
+     ```
+   
    - **Arch:**
-     `bash
+     
+     ```bash
      sudo pacman -S axel
-     `
+     ```
 
 3. Make the script executable:
-    `bash
-    chmod +x index.sh
-    `
+   
+   ```bash
+   chmod +x index.sh
+   ```
 
 4. Run the script:
-    `bash
-    ./index.sh
-    `
-
+   
+   ```bash
+   ./index.sh
+   ```
+   
    Alternatively, you can run the script without cloning the repository using:
-   `bash
+   
+   ```bash
    bash -c "$(curl -fsSL https://gitlab.com/hecdelatorre/axel-download-manager/-/raw/main/index.sh)"
-   `
+   ```
 
 ## Usage
 
@@ -64,4 +70,3 @@ If you would like to contribute to this project, please submit a pull request.
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 "
-
