@@ -79,15 +79,18 @@ get_links() {
   done
 }
 
-# Function to download the files using axel and record the download time
+# Function to download the files using axel in the background and record the download time
 download_files() {
   start_time=$(date +%s)
   echo -e "\n"
   for ((i=0; i<count; i++)); do
     link="${links[$i]}"
-    echo "Downloading file $((i + 1)) of $count..."
-    axel -q -n 5 "$link"
+    echo "Downloading file $((i + 1)) of $count in the background..."
+    axel -q -n 5 "$link" &
   done
+
+  # Wait for all background downloads to finish
+  wait
 
   end_time=$(date +%s)
   total_time=$((end_time - start_time))

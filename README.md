@@ -48,7 +48,7 @@ To use this tool, follow these steps:
    Alternatively, you can run the script without cloning the repository using:
    
    ```bash
-   bash -c "$(curl -fsSL https://gitlab.com/hecdelatorre/axel-download-manager/-/raw/main/index-min.sh)"
+   bash -c "$(curl -fsSL https://gitlab.com/hecdelatorre/axel-download-manager/-/raw/main/index.sh)"
    ```
 
 ## Usage
@@ -69,4 +69,3 @@ If you would like to contribute to this project, please submit a pull request.
 ## License
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
-"
