@@ -54,7 +54,6 @@ get_new_folder() {
       if [ ! -d "$directory/$folder" ]; then
         mkdir "$directory/$folder"
         directory="$directory/$folder"
-        cd "$directory" || exit
         break
       fi
 
@@ -79,6 +78,16 @@ get_links() {
   done
 }
 
+# Function to display elapsed time while downloads are in progress
+display_elapsed_time() {
+  local elapsed=0
+  while [ "$(ps -a | grep axel | wc -l)" -gt 1 ]; do
+    sleep 1
+    elapsed=$((elapsed + 1))
+    printf "\rElapsed time: %02d:%02d:%02d" $((elapsed/3600)) $((elapsed%3600/60)) $((elapsed%60))
+  done
+}
+
 # Function to download the files using axel in the background and record the download time
 download_files() {
   start_time=$(date +%s)
@@ -88,6 +97,9 @@ download_files() {
     echo "Downloading file $((i + 1)) of $count in the background..."
     axel -q -n 5 "$link" &
   done
+
+  # Display elapsed time while downloads are in progress
+  display_elapsed_time
 
   # Wait for all background downloads to finish
   wait
