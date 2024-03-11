@@ -54,6 +54,7 @@ get_new_folder() {
       if [ ! -d "$directory/$folder" ]; then
         mkdir "$directory/$folder"
         directory="$directory/$folder"
+        cd "$directory" || exit
         break
       fi
 
